@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B4C23C64294147127725721 /* Pods_DuncNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE0D4EED03AD81F989F3B4A7 /* Pods_DuncNotes.framework */; };
+		AE136D0721AF339400C09D32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE136D0621AF339400C09D32 /* GoogleService-Info.plist */; };
 		AEF6743121AF2536009083F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6743021AF2536009083F2 /* AppDelegate.swift */; };
 		AEF6743321AF2536009083F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6743221AF2536009083F2 /* ViewController.swift */; };
 		AEF6743621AF2536009083F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF6743421AF2536009083F2 /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		862601633D3E05B7769D822E /* Pods-DuncNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuncNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DuncNotes/Pods-DuncNotes.debug.xcconfig"; sourceTree = "<group>"; };
+		AE136D0621AF339400C09D32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AEF6742D21AF2536009083F2 /* DuncNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuncNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF6743021AF2536009083F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF6743221AF2536009083F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		AEF6743721AF2537009083F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEF6743A21AF2537009083F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEF6743C21AF2537009083F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE0D4EED03AD81F989F3B4A7 /* Pods_DuncNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DuncNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE5E2A8C06C82FB47BD5F640 /* Pods-DuncNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuncNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-DuncNotes/Pods-DuncNotes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4C23C64294147127725721 /* Pods_DuncNotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DF3DFCA62CAC7755803D3BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE0D4EED03AD81F989F3B4A7 /* Pods_DuncNotes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8020A290C81B703B7A8A88D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				862601633D3E05B7769D822E /* Pods-DuncNotes.debug.xcconfig */,
+				FE5E2A8C06C82FB47BD5F640 /* Pods-DuncNotes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AEF6742421AF2535009083F2 = {
 			isa = PBXGroup;
 			children = (
 				AEF6742F21AF2536009083F2 /* DuncNotes */,
 				AEF6742E21AF2536009083F2 /* Products */,
+				8020A290C81B703B7A8A88D0 /* Pods */,
+				3DF3DFCA62CAC7755803D3BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +86,7 @@
 				AEF6743721AF2537009083F2 /* Assets.xcassets */,
 				AEF6743921AF2537009083F2 /* LaunchScreen.storyboard */,
 				AEF6743C21AF2537009083F2 /* Info.plist */,
+				AE136D0621AF339400C09D32 /* GoogleService-Info.plist */,
 			);
 			path = DuncNotes;
 			sourceTree = "<group>";
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEF6743F21AF2537009083F2 /* Build configuration list for PBXNativeTarget "DuncNotes" */;
 			buildPhases = (
+				52680CE9D69226FFFA379A35 /* [CP] Check Pods Manifest.lock */,
 				AEF6742921AF2535009083F2 /* Sources */,
 				AEF6742A21AF2535009083F2 /* Frameworks */,
 				AEF6742B21AF2535009083F2 /* Resources */,
+				F0C6B272F12238DB4BFDE1AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE136D0721AF339400C09D32 /* GoogleService-Info.plist in Resources */,
 				AEF6743B21AF2537009083F2 /* LaunchScreen.storyboard in Resources */,
 				AEF6743821AF2537009083F2 /* Assets.xcassets in Resources */,
 				AEF6743621AF2536009083F2 /* Main.storyboard in Resources */,
@@ -129,6 +159,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52680CE9D69226FFFA379A35 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DuncNotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0C6B272F12238DB4BFDE1AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DuncNotes/Pods-DuncNotes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DuncNotes/Pods-DuncNotes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AEF6742921AF2535009083F2 /* Sources */ = {
@@ -280,6 +359,7 @@
 		};
 		AEF6744021AF2537009083F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 862601633D3E05B7769D822E /* Pods-DuncNotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +378,7 @@
 		};
 		AEF6744121AF2537009083F2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE5E2A8C06C82FB47BD5F640 /* Pods-DuncNotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
