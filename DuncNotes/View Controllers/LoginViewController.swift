@@ -17,6 +17,12 @@ class LoginViewController: UIViewController {
         print("initialized view controller")
     }
     
+    @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {
+        // clear text fields
+        self.emailTextField.text = ""
+        self.passwordTextField.text = ""
+    }
+    
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender.tag {
         case 0: // Login Button Tapped
@@ -28,6 +34,7 @@ class LoginViewController: UIViewController {
                     self.showAlert(title: "Error", message: err.localizedDescription, actionText: "Ok")
                 } else {
                     print("Successfully logged in")
+                    self.performSegue(withIdentifier: "showNotes", sender: self)
                 }
             }
             
@@ -39,7 +46,7 @@ class LoginViewController: UIViewController {
                     // Show alert containingn error message
                     self.showAlert(title: "Error", message: err.localizedDescription, actionText: "Ok")
                 } else {
-                    print("Successfully signed up")
+                    self.performSegue(withIdentifier: "showNotes", sender: self)
                 }
             }
             

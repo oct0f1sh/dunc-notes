@@ -35,4 +35,13 @@ class AuthenticationService {
             }
         }
     }
+    
+    static func signOutUser(completion: @escaping (Error?) -> Void) {
+        do {
+            try Auth.auth().signOut()
+            completion(nil)
+        } catch (let err) {
+            completion(err)
+        }
+    }
 }

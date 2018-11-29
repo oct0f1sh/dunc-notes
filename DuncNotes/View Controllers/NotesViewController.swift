@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
 class NotesViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,13 +17,22 @@ class NotesViewController: UIViewController {
     }
     
     func setupView() {
-
         // Set Navigation bar font and size
         let attributes = [NSAttributedString.Key.font: UIFont(name: "SofiaProLight", size: 20)!]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
     }
 
-
+    @IBAction func logoutTapped(_ sender: Any) {
+        AuthenticationService.signOutUser { (err) in
+            if let err = err {
+                self.showAlert(title: "Error", message: err.localizedDescription, actionText: "Ok")
+            } else {
+                self.showAlert(title: "Success", message: "Successfully logged out", actionText: "Nice")
+                self.performSegue(withIdentifier: "showLogin", sender: self)
+            }
+        }
+    }
+    
 }
 
 extension NotesViewController: UITableViewDataSource {
