@@ -10,5 +10,5 @@ import Foundation
 import Firebase
 
 class User {
-    var username: String!
+    var email: String!
 }
