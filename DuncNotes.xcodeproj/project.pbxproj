@@ -11,6 +11,9 @@
 		AE136D0721AF339400C09D32 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE136D0621AF339400C09D32 /* GoogleService-Info.plist */; };
 		AE48BF9021AF393500C227A4 /* sofiapro-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE48BF8F21AF38D800C227A4 /* sofiapro-light.otf */; };
 		AE48BF9321AF3C4200C227A4 /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9221AF3C4200C227A4 /* NoteCellView.swift */; };
+		AE48BF9621B0837000C227A4 /* DatabaseReference+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9521B0837000C227A4 /* DatabaseReference+Location.swift */; };
+		AE48BF9921B086CE00C227A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9821B086CE00C227A4 /* User.swift */; };
+		AE48BF9B21B0874500C227A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9A21B0874500C227A4 /* LoginViewController.swift */; };
 		AEF6743121AF2536009083F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6743021AF2536009083F2 /* AppDelegate.swift */; };
 		AEF6743321AF2536009083F2 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6743221AF2536009083F2 /* NotesViewController.swift */; };
 		AEF6743621AF2536009083F2 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEF6743421AF2536009083F2 /* Notes.storyboard */; };
@@ -23,6 +26,9 @@
 		AE136D0621AF339400C09D32 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AE48BF8F21AF38D800C227A4 /* sofiapro-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sofiapro-light.otf"; sourceTree = "<group>"; };
 		AE48BF9221AF3C4200C227A4 /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
+		AE48BF9521B0837000C227A4 /* DatabaseReference+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Location.swift"; sourceTree = "<group>"; };
+		AE48BF9821B086CE00C227A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AE48BF9A21B0874500C227A4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AEF6742D21AF2536009083F2 /* DuncNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuncNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF6743021AF2536009083F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEF6743221AF2536009083F2 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				AEF6743221AF2536009083F2 /* NotesViewController.swift */,
+				AE48BF9A21B0874500C227A4 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -106,6 +113,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		AE48BF9421B082ED00C227A4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE48BF9521B0837000C227A4 /* DatabaseReference+Location.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE48BF9721B086C600C227A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE48BF9821B086CE00C227A4 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		AEF6742421AF2535009083F2 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +150,8 @@
 		AEF6742F21AF2536009083F2 /* DuncNotes */ = {
 			isa = PBXGroup;
 			children = (
+				AE48BF9721B086C600C227A4 /* Models */,
+				AE48BF9421B082ED00C227A4 /* Extensions */,
 				AE48BF9121AF3C3400C227A4 /* Views */,
 				AE48BF8E21AF38C700C227A4 /* Fonts */,
 				AE48BF8D21AF382A00C227A4 /* Storyboards */,
@@ -239,14 +264,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DuncNotes/Pods-DuncNotes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,8 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE48BF9B21B0874500C227A4 /* LoginViewController.swift in Sources */,
 				AEF6743321AF2536009083F2 /* NotesViewController.swift in Sources */,
 				AE48BF9321AF3C4200C227A4 /* NoteCellView.swift in Sources */,
+				AE48BF9621B0837000C227A4 /* DatabaseReference+Location.swift in Sources */,
+				AE48BF9921B086CE00C227A4 /* User.swift in Sources */,
 				AEF6743121AF2536009083F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

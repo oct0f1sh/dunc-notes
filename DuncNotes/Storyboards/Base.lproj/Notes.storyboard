@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qT7-Vt-kOQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kS7-ZR-t5i">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Note Title-->
         <scene sceneID="YbX-Rr-swf">
             <objects>
                 <viewController id="qmN-K2-ujC" sceneMemberID="viewController">
@@ -84,10 +84,92 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Avn-ge-mlM"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Note Title" id="VxM-si-U6f"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swb-fm-jCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2284" y="134"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NLr-sm-W5w">
+            <objects>
+                <viewController id="kS7-ZR-t5i" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7fE-sG-Klo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2D4-4R-4IZ">
+                                <rect key="frame" x="111.5" y="140" width="152.5" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dunc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQK-gR-Z29">
+                                        <rect key="frame" x="0.0" y="0.0" width="73.5" height="30"/>
+                                        <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="31"/>
+                                        <color key="textColor" red="0.48627450980392156" green="0.61960784313725492" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9b-Ct-CFl">
+                                        <rect key="frame" x="73.5" y="0.0" width="79" height="30"/>
+                                        <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="31"/>
+                                        <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-a3-vAm">
+                                <rect key="frame" x="45" y="270" width="285" height="180"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6du-Mf-vdU">
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ZAt-XJ-DiH"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qep-mO-1Et">
+                                        <rect key="frame" x="0.0" y="75" width="285" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dC6-R3-wGA"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="G3C-6C-erK">
+                                        <rect key="frame" x="0.0" y="150" width="285" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9R-Hw-BLj">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
+                                                <state key="normal" title="Log In"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8q-t5-Ma9">
+                                                <rect key="frame" x="155" y="0.0" width="130" height="30"/>
+                                                <state key="normal" title="Sign Up"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qNX-a3-vAm" firstAttribute="leading" secondItem="enI-6k-l2R" secondAttribute="leading" constant="45" id="RK5-Cw-W6Q"/>
+                            <constraint firstItem="2D4-4R-4IZ" firstAttribute="top" secondItem="enI-6k-l2R" secondAttribute="top" constant="120" id="a8b-6T-Vp6"/>
+                            <constraint firstItem="enI-6k-l2R" firstAttribute="trailing" secondItem="qNX-a3-vAm" secondAttribute="trailing" constant="45" id="e8e-Li-ALW"/>
+                            <constraint firstItem="qNX-a3-vAm" firstAttribute="centerX" secondItem="7fE-sG-Klo" secondAttribute="centerX" id="gHg-d8-Wo0"/>
+                            <constraint firstItem="qNX-a3-vAm" firstAttribute="top" secondItem="2D4-4R-4IZ" secondAttribute="bottom" constant="100" id="y2t-q8-4gg"/>
+                            <constraint firstItem="2D4-4R-4IZ" firstAttribute="centerX" secondItem="7fE-sG-Klo" secondAttribute="centerX" id="zmp-oo-UX4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="enI-6k-l2R"/>
+                    </view>
+                    <connections>
+                        <segue destination="qT7-Vt-kOQ" kind="show" identifier="showNotes" id="iR5-Gz-dPU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kK2-yj-Iel" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1378" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sPO-gU-9hG">
