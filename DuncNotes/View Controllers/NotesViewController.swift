@@ -13,6 +13,10 @@ class NotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NoteService.getNotes() { notes in
+            print(notes)
+        }
+        
         setupView()
     }
     
@@ -30,6 +34,12 @@ class NotesViewController: UIViewController {
                 self.showAlert(title: "Success", message: "Successfully logged out", actionText: "Nice")
                 self.performSegue(withIdentifier: "showLogin", sender: self)
             }
+        }
+    }
+    
+    @IBAction func newNoteTapped(_ sender: Any) {
+        NoteService.saveNote(note: Note(title: "new note", content: "this is my cool new note")) { (err) in
+            print("OH GOD OH NO \(err?.localizedDescription)")
         }
     }
     

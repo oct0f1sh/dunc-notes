@@ -13,8 +13,28 @@ class NoteService {
     static func getNotes(completion: @escaping ([Note]) -> Void) {
         let uid = Auth.auth().currentUser?.uid
         
-        let ref = DatabaseReference.toLocation.user(uid: uid!).dbReference()
+        let ref = DatabaseReference.toLocation(.notes(userUid: uid!))
         
-        ref
+        print(ref.description())
+        
+        var notes = [Note]()
+        
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children {
+                if let snap = child as? DataSnapshot,
+                    let note = Note(from: snap) {
+                    notes.append(note)
+                }
+            }
+            completion(notes)
+        }
+    }
+    
+    static func saveNote(note: Note, completion: @escaping (Error?) -> Void) {
+        let uid = Auth.auth().currentUser?.uid
+        
+        let ref = DatabaseReference.toLocation(.notes(userUid: uid!)).childByAutoId()
+        
+        ref.setValue(note.asDict())
     }
 }

@@ -72,7 +72,11 @@
                                 <action selector="logoutTapped:" destination="BYZ-38-t0r" id="Ol3-7q-2Lp"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I3C-Eu-VMz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I3C-Eu-VMz">
+                            <connections>
+                                <action selector="newNoteTapped:" destination="BYZ-38-t0r" id="08x-ky-R0h"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="7NQ-aO-r2T" kind="unwind" identifier="showLogin" unwindAction="unwindToLogin:" id="GdJ-6c-ETH"/>
@@ -160,7 +164,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-a3-vAm">
                                 <rect key="frame" x="45" y="230.5" width="285" height="180"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6du-Mf-vdU">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dunc@dunc.info" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6du-Mf-vdU">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ZAt-XJ-DiH"/>
@@ -169,7 +173,7 @@
                                         <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qep-mO-1Et">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="coolbeans" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qep-mO-1Et">
                                         <rect key="frame" x="0.0" y="75" width="285" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="dC6-R3-wGA"/>

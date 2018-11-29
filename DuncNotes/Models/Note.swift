@@ -23,9 +23,14 @@ class Note {
         case content
     }
     
-    init(from snapshot: DataSnapshot) {
+    init?(from snapshot: DataSnapshot) {
         let note = snapshot.value as! [String: Any]
         self.title = note["title"] as! String
         self.content = note["content"] as! String
+    }
+    
+    func asDict() -> [String: Any] {
+        return ["title": self.title,
+                "content": self.content]
     }
 }
