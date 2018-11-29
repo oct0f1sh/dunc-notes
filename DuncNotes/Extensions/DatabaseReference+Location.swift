@@ -10,9 +10,10 @@ import Foundation
 import Firebase
 
 extension DatabaseReference {
-    enum toLocation {
+    enum DbLocation {
         case root
-        case user
+        case users
+        case user(uid: String)
         
         func dbReference() -> DatabaseReference {
             let root = Database.database().reference()
@@ -20,9 +21,15 @@ extension DatabaseReference {
             switch self {
             case .root:
                 return root
-            case .user:
-                return root.child("user")
+            case .users:
+                return root.child("users")
+            case .user(let uid):
+                return root.child("users").child(uid)
             }
         }
+    }
+    
+    static func toLocation(_ location: DbLocation) -> DatabaseReference {
+        return location.dbReference()
     }
 }
