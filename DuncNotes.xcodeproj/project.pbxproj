@@ -12,13 +12,11 @@
 		AE48BF9021AF393500C227A4 /* sofiapro-light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AE48BF8F21AF38D800C227A4 /* sofiapro-light.otf */; };
 		AE48BF9321AF3C4200C227A4 /* NoteCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9221AF3C4200C227A4 /* NoteCellView.swift */; };
 		AE48BF9621B0837000C227A4 /* DatabaseReference+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9521B0837000C227A4 /* DatabaseReference+Location.swift */; };
-		AE48BF9921B086CE00C227A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9821B086CE00C227A4 /* User.swift */; };
 		AE48BF9B21B0874500C227A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9A21B0874500C227A4 /* LoginViewController.swift */; };
 		AE48BF9E21B088FF00C227A4 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9D21B088FF00C227A4 /* AuthenticationService.swift */; };
 		AE48BFA021B08F5700C227A4 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BF9F21B08F5700C227A4 /* UIViewController+Alert.swift */; };
 		AE48BFA221B09E1200C227A4 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BFA121B09E1200C227A4 /* Note.swift */; };
 		AE48BFA421B0A36700C227A4 /* NoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BFA321B0A36700C227A4 /* NoteService.swift */; };
-		AE48BFA621B0AE9200C227A4 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BFA521B0AE9200C227A4 /* UserService.swift */; };
 		AE48BFA821B0B8DE00C227A4 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48BFA721B0B8DE00C227A4 /* NoteViewController.swift */; };
 		AEF6743121AF2536009083F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6743021AF2536009083F2 /* AppDelegate.swift */; };
 		AEF6743321AF2536009083F2 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6743221AF2536009083F2 /* NotesViewController.swift */; };
@@ -33,13 +31,11 @@
 		AE48BF8F21AF38D800C227A4 /* sofiapro-light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sofiapro-light.otf"; sourceTree = "<group>"; };
 		AE48BF9221AF3C4200C227A4 /* NoteCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellView.swift; sourceTree = "<group>"; };
 		AE48BF9521B0837000C227A4 /* DatabaseReference+Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseReference+Location.swift"; sourceTree = "<group>"; };
-		AE48BF9821B086CE00C227A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AE48BF9A21B0874500C227A4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AE48BF9D21B088FF00C227A4 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		AE48BF9F21B08F5700C227A4 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		AE48BFA121B09E1200C227A4 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		AE48BFA321B0A36700C227A4 /* NoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteService.swift; sourceTree = "<group>"; };
-		AE48BFA521B0AE9200C227A4 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		AE48BFA721B0B8DE00C227A4 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		AEF6742D21AF2536009083F2 /* DuncNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuncNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF6743021AF2536009083F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,7 +134,6 @@
 		AE48BF9721B086C600C227A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AE48BF9821B086CE00C227A4 /* User.swift */,
 				AE48BFA121B09E1200C227A4 /* Note.swift */,
 			);
 			path = Models;
@@ -149,7 +144,6 @@
 			children = (
 				AE48BF9D21B088FF00C227A4 /* AuthenticationService.swift */,
 				AE48BFA321B0A36700C227A4 /* NoteService.swift */,
-				AE48BFA521B0AE9200C227A4 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -322,8 +316,6 @@
 				AE48BFA421B0A36700C227A4 /* NoteService.swift in Sources */,
 				AE48BFA821B0B8DE00C227A4 /* NoteViewController.swift in Sources */,
 				AE48BF9621B0837000C227A4 /* DatabaseReference+Location.swift in Sources */,
-				AE48BF9921B086CE00C227A4 /* User.swift in Sources */,
-				AE48BFA621B0AE9200C227A4 /* UserService.swift in Sources */,
 				AE48BFA221B09E1200C227A4 /* Note.swift in Sources */,
 				AEF6743121AF2536009083F2 /* AppDelegate.swift in Sources */,
 				AE48BF9E21B088FF00C227A4 /* AuthenticationService.swift in Sources */,

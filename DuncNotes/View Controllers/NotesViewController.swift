@@ -10,7 +10,13 @@ import UIKit
 import Firebase
 
 class NotesViewController: UIViewController {
+    
+    // OUTLETS AND UNWIND SEGUES
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func unwindToNotes(_ unwindSegue: UIStoryboardSegue) {}
+    
+    // CLASS PROPERTIES
     
     var notes: [Note] = [] {
         didSet {
@@ -18,16 +24,7 @@ class NotesViewController: UIViewController {
         }
     }
     
-    @IBAction func unwindToNotes(_ unwindSegue: UIStoryboardSegue) {}
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        getNotes()
-    }
+    // CLASS METHODS
     
     func setupView() {
         // Set Navigation bar font and size
@@ -40,7 +37,27 @@ class NotesViewController: UIViewController {
             self.notes = notes
         }
     }
-
+    
+    // FUNCTION OVERRIDES
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getNotes()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNote" {
+            let destination: NoteViewController = segue.destination as! NoteViewController
+            destination.note = self.notes[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+    
+    // IBACTIONS
+    
     @IBAction func logoutTapped(_ sender: Any) {
         AuthenticationService.signOutUser { (err) in
             if let err = err {
@@ -48,16 +65,6 @@ class NotesViewController: UIViewController {
             } else {
                 self.performSegue(withIdentifier: "showLogin", sender: self)
             }
-        }
-    }
-    
-    @IBAction func newNoteTapped(_ sender: Any) {
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showNote" {
-            let destination: NoteViewController = segue.destination as! NoteViewController
-            destination.note = self.notes[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
 }

@@ -10,18 +10,24 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    // OUTLETS AND UNWIND SEGUES
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    override func viewDidLoad() {
-        print("initialized view controller")
-    }
-    
     @IBAction func unwindToLogin(_ unwindSegue: UIStoryboardSegue) {
         // clear text fields
         self.emailTextField.text = ""
         self.passwordTextField.text = ""
     }
+    
+    // OVERRIDE FUNCTIONS
+    
+    override func viewDidLoad() {
+        print("initialized view controller")
+    }
+    
+    // IBACTIONS
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender.tag {

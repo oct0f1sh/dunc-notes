@@ -36,6 +36,7 @@ extension DatabaseReference {
     }
     
     static func toLocation(_ location: DbLocation) -> DatabaseReference {
+        // Helper to shorten references to database
         return location.dbReference()
     }
 }

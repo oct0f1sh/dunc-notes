@@ -10,15 +10,18 @@ import Foundation
 import UIKit
 
 class NoteViewController: UIViewController {
+    
+    // OUTLETS
+    
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     
+    // CLASS PROPERTIES
+    
     var note: Note?
     
-    override func viewDidLoad() {
-        setupView()
-    }
+    // CLASS METHODS
     
     func setupView() {
         // style text view
@@ -37,6 +40,14 @@ class NoteViewController: UIViewController {
             contentTextView.text = ""
         }
     }
+    
+    // FUNCTION OVERRIDES
+    
+    override func viewDidLoad() {
+        setupView()
+    }
+    
+    // IBACTIONS
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         // save note contents / update existing note
