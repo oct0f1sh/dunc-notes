@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 class NoteCellView: UITableViewCell {
-    var noteTitle: String!
+    @IBOutlet weak var noteTitleLabel: UILabel!
 }

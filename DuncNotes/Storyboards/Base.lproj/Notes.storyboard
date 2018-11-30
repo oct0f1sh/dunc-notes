@@ -47,6 +47,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="noteTitleLabel" destination="uke-7l-n30" id="Ndq-Rm-9aI"/>
                                             <segue destination="qmN-K2-ujC" kind="show" id="7yI-Y8-y3C"/>
                                         </connections>
                                     </tableViewCell>
@@ -79,6 +80,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="AIN-hy-aUr" id="60D-ei-Pdg"/>
                         <segue destination="7NQ-aO-r2T" kind="unwind" identifier="showLogin" unwindAction="unwindToLogin:" id="GdJ-6c-ETH"/>
                     </connections>
                 </viewController>

@@ -10,14 +10,21 @@ import UIKit
 import Firebase
 
 class NotesViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    
+    var notes: [Note] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         
         NoteService.getNotes() { notes in
-            print(notes)
+            self.notes = notes
         }
-        
-        setupView()
     }
     
     func setupView() {
@@ -31,7 +38,6 @@ class NotesViewController: UIViewController {
             if let err = err {
                 self.showAlert(title: "Error", message: err.localizedDescription, actionText: "Ok")
             } else {
-                self.showAlert(title: "Success", message: "Successfully logged out", actionText: "Nice")
                 self.performSegue(withIdentifier: "showLogin", sender: self)
             }
         }
@@ -47,13 +53,13 @@ class NotesViewController: UIViewController {
 
 extension NotesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: NoteCellView = tableView.dequeueReusableCell(withIdentifier: "noteCell") as! NoteCellView
         
-        cell.noteTitle = "Note \(indexPath.row)"
+        cell.noteTitleLabel.text = self.notes[indexPath.row].title
         
         return cell
     }
