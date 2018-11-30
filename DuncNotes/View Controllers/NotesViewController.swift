@@ -18,19 +18,27 @@ class NotesViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindToNotes(_ unwindSegue: UIStoryboardSegue) {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
-        NoteService.getNotes() { notes in
-            self.notes = notes
-        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getNotes()
     }
     
     func setupView() {
         // Set Navigation bar font and size
         let attributes = [NSAttributedString.Key.font: UIFont(name: "SofiaProLight", size: 20)!]
         self.navigationController?.navigationBar.titleTextAttributes = attributes
+    }
+    
+    func getNotes() {
+        NoteService.getNotes() { notes in
+            self.notes = notes
+        }
     }
 
     @IBAction func logoutTapped(_ sender: Any) {
@@ -44,11 +52,14 @@ class NotesViewController: UIViewController {
     }
     
     @IBAction func newNoteTapped(_ sender: Any) {
-        NoteService.saveNote(note: Note(title: "new note", content: "this is my cool new note")) { (err) in
-            print("OH GOD OH NO \(err?.localizedDescription)")
-        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNote" {
+            let destination: NoteViewController = segue.destination as! NoteViewController
+            destination.note = self.notes[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
 }
 
 extension NotesViewController: UITableViewDataSource {
@@ -66,5 +77,17 @@ extension NotesViewController: UITableViewDataSource {
 }
 
 extension NotesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showNote", sender: self)
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle ==  .delete {
+            let note = notes[indexPath.row]
+            
+            NoteService.removeNote(note: note) {
+                getNotes()
+            }
+        }
+    }
 }

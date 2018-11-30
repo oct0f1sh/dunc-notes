@@ -48,7 +48,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="noteTitleLabel" destination="uke-7l-n30" id="Ndq-Rm-9aI"/>
-                                            <segue destination="qmN-K2-ujC" kind="show" id="7yI-Y8-y3C"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -76,12 +75,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="I3C-Eu-VMz">
                             <connections>
                                 <action selector="newNoteTapped:" destination="BYZ-38-t0r" id="08x-ky-R0h"/>
+                                <segue destination="qmN-K2-ujC" kind="show" identifier="newNote" id="UIg-tt-cHX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="AIN-hy-aUr" id="60D-ei-Pdg"/>
                         <segue destination="7NQ-aO-r2T" kind="unwind" identifier="showLogin" unwindAction="unwindToLogin:" id="GdJ-6c-ETH"/>
+                        <segue destination="qmN-K2-ujC" kind="show" identifier="showNote" id="HoZ-mh-azL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,41 +90,69 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Note View Controller-->
         <scene sceneID="YbX-Rr-swf">
             <objects>
-                <viewController id="qmN-K2-ujC" sceneMemberID="viewController">
+                <viewController id="qmN-K2-ujC" customClass="NoteViewController" customModule="DuncNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1mP-SH-Tst">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPW-Hh-oli">
-                                <rect key="frame" x="149" y="87" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPW-Hh-oli">
+                                <rect key="frame" x="25" y="84" width="325" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KDJ-mT-4tX"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wvI-7g-DRd">
-                                <rect key="frame" x="77" y="170" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wvI-7g-DRd">
+                                <rect key="frame" x="25" y="144" width="325" height="453"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzy-Ue-cHt">
-                                <rect key="frame" x="164" y="466" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzy-Ue-cHt">
+                                <rect key="frame" x="25" y="607" width="325" height="50"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.4823529412" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="46T-lk-klw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="qmN-K2-ujC" eventType="touchUpInside" id="7ZY-9k-LOG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fPW-Hh-oli" firstAttribute="top" secondItem="Avn-ge-mlM" secondAttribute="top" constant="20" id="5qw-lm-7XP"/>
+                            <constraint firstItem="fPW-Hh-oli" firstAttribute="leading" secondItem="Avn-ge-mlM" secondAttribute="leading" constant="25" id="736-4e-WOC"/>
+                            <constraint firstItem="Avn-ge-mlM" firstAttribute="trailing" secondItem="rzy-Ue-cHt" secondAttribute="trailing" constant="25" id="9LY-iD-ceD"/>
+                            <constraint firstItem="rzy-Ue-cHt" firstAttribute="top" secondItem="wvI-7g-DRd" secondAttribute="bottom" constant="10" id="A6i-CJ-hR4"/>
+                            <constraint firstItem="Avn-ge-mlM" firstAttribute="bottom" secondItem="rzy-Ue-cHt" secondAttribute="bottom" constant="10" id="LBf-Qm-JOs"/>
+                            <constraint firstItem="Avn-ge-mlM" firstAttribute="trailing" secondItem="fPW-Hh-oli" secondAttribute="trailing" constant="25" id="Ol2-Gq-OLM"/>
+                            <constraint firstItem="wvI-7g-DRd" firstAttribute="top" secondItem="fPW-Hh-oli" secondAttribute="bottom" constant="10" id="clC-ng-nsu"/>
+                            <constraint firstItem="wvI-7g-DRd" firstAttribute="leading" secondItem="Avn-ge-mlM" secondAttribute="leading" constant="25" id="d8E-ye-eas"/>
+                            <constraint firstItem="Avn-ge-mlM" firstAttribute="trailing" secondItem="wvI-7g-DRd" secondAttribute="trailing" constant="25" id="kKr-bK-JOQ"/>
+                            <constraint firstItem="rzy-Ue-cHt" firstAttribute="leading" secondItem="Avn-ge-mlM" secondAttribute="leading" constant="25" id="pHo-gG-VF1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Avn-ge-mlM"/>
                     </view>
                     <navigationItem key="navigationItem" id="VxM-si-U6f"/>
+                    <connections>
+                        <outlet property="contentTextView" destination="wvI-7g-DRd" id="WFW-Nz-fIP"/>
+                        <outlet property="saveButton" destination="rzy-Ue-cHt" id="Dtt-wD-RvA"/>
+                        <outlet property="titleTextField" destination="fPW-Hh-oli" id="vYq-XH-liq"/>
+                        <segue destination="Faz-UX-5Dr" kind="unwind" unwindAction="unwindToNotes:" id="t8c-hq-SlL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swb-fm-jCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Faz-UX-5Dr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2284" y="134"/>
         </scene>
@@ -166,7 +195,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-a3-vAm">
                                 <rect key="frame" x="45" y="230.5" width="285" height="180"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="dunc@dunc.info" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6du-Mf-vdU">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6du-Mf-vdU">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ZAt-XJ-DiH"/>
@@ -175,7 +204,7 @@
                                         <fontDescription key="fontDescription" name="SofiaProLight" family="Sofia Pro" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartInsertDeleteType="no" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="coolbeans" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qep-mO-1Et">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qep-mO-1Et">
                                         <rect key="frame" x="0.0" y="75" width="285" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="dC6-R3-wGA"/>
@@ -246,4 +275,7 @@
             <point key="canvasLocation" x="-166" y="134"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UIg-tt-cHX"/>
+    </inferredMetricsTieBreakers>
 </document>

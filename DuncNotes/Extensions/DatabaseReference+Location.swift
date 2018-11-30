@@ -15,6 +15,7 @@ extension DatabaseReference {
         case users
         case user(uid: String)
         case notes(userUid: String)
+        case note(userUid: String, noteUid: String)
         
         func dbReference() -> DatabaseReference {
             let root = Database.database().reference()
@@ -28,6 +29,8 @@ extension DatabaseReference {
                 return root.child("users").child(uid)
             case .notes(let userUid):
                 return root.child("users").child(userUid).child("notes")
+            case .note(let userUid, let noteUid):
+                return root.child("users").child(userUid).child("notes").child(noteUid)
             }
         }
     }

@@ -30,11 +30,27 @@ class NoteService {
         }
     }
     
-    static func saveNote(note: Note, completion: @escaping (Error?) -> Void) {
-        let uid = Auth.auth().currentUser?.uid
+    static func saveNote(note: Note, completion: () -> Void) {
+        let uid = Auth.auth().currentUser!.uid
+        let ref: DatabaseReference!
         
-        let ref = DatabaseReference.toLocation(.notes(userUid: uid!)).childByAutoId()
+        if let noteUid = note.uid { // Overwriting existing note
+            ref = DatabaseReference.toLocation(.notes(userUid: uid)).child(noteUid)
+        } else { // Saving new note
+            ref = DatabaseReference.toLocation(.notes(userUid: uid)).childByAutoId()
+        }
         
         ref.setValue(note.asDict())
+        
+        completion()
+    }
+    
+    static func removeNote(note: Note, completion: () -> Void) {
+        let uid = Auth.auth().currentUser!.uid
+        let ref = DatabaseReference.toLocation(.note(userUid: uid, noteUid: note.uid!))
+        
+        ref.removeValue()
+        
+        completion()
     }
 }

@@ -12,10 +12,17 @@ import Firebase
 class Note {
     var title: String
     var content: String
+    var uid: String?
     
     init(title: String, content: String) {
         self.title = title
         self.content = content
+    }
+    
+    init(title: String, content: String, uid: String) {
+        self.title = title
+        self.content = content
+        self.uid = uid
     }
     
     enum CodingKeys: String, CodingKey {
@@ -27,6 +34,7 @@ class Note {
         let note = snapshot.value as! [String: Any]
         self.title = note["title"] as! String
         self.content = note["content"] as! String
+        self.uid = snapshot.key
     }
     
     func asDict() -> [String: Any] {
